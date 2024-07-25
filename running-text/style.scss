@@ -1,0 +1,88 @@
+@import "../bootstrap-reboot.min";
+
+body {
+    background-color: #f2f2f2;
+}
+
+$review-item-width: 300px;
+$number-of-items: 8;
+
+.reviews {
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 190px;
+    margin: 50px 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    &:hover {
+        .reviews__item{
+            animation-play-state: paused;
+        }
+    }
+}
+
+@keyframes runningLine {
+    100% {
+        left: -$review-item-width;
+    }
+}
+
+.reviews__item {
+    position: absolute;
+    height: 170px;
+    left: max(calc($review-item-width * $number-of-items), 100%);
+    animation: runningLine 30s linear infinite;
+    padding: 20px;
+    background-color: #fff;
+    width: $review-item-width;
+    border-radius: 16px;
+    margin-right: 20px;
+    transition: transform .5s ease-in-out;
+    cursor: pointer;
+    &-title {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &-stars {
+        margin: 5px 0;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.item1 {
+    animation-delay: calc(30s / $number-of-items * ($number-of-items - 1) * -1);
+}
+
+.item2 {
+    animation-delay: calc(30s / $number-of-items * ($number-of-items - 2) * -1);
+}
+
+.item3 {
+    animation-delay: calc(30s / $number-of-items * ($number-of-items - 3) * -1);
+}
+
+.item4 {
+    animation-delay: calc(30s / $number-of-items * ($number-of-items - 4) * -1);
+}
+
+.item5 {
+    animation-delay: calc(30s / $number-of-items * ($number-of-items - 5) * -1);
+}
+
+.item6 {
+    animation-delay: calc(30s / $number-of-items * ($number-of-items - 6) * -1);
+}
+
+.item7 {
+    animation-delay: calc(30s / $number-of-items * ($number-of-items - 7) * -1);
+}
+
+.item8 {
+    animation-delay: calc(30s / $number-of-items * ($number-of-items - 8) * -1);
+}
